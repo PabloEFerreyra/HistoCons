@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.url">jdbc:mysql://168.181.184.74:3306/histocons</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">migapi22KE</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.search.autoregister_listeners">false</property>
+        <property name="hibernate.validator.apply_to_ddl">false</property>
+        <property name="hibernate.id.new_generator_mappings">false</property>
+        <property name="connection.pool_size">1</property>
+        <property name="show_sql">true</property>
+		<mapping class="com.histocons.entidades.Historia" resource="com/histocons/entidades/Historia.hbm.xml"/>
+		<mapping class="com.histocons.entidades.Provincia" resource="com/histocons/entidades/Provincia.hbm.xml"/>
+  		<mapping class="com.histocons.entidades.Ciudad" resource="com/histocons/entidades/Ciudad.hbm.xml"/>
+  		<mapping class="com.histocons.entidades.Usuarios" resource="com/histocons/entidades/Usuarios.hbm.xml"/>
+  		<mapping class="com.histocons.entidades.Paciente" resource="com/histocons/entidades/Paciente.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
