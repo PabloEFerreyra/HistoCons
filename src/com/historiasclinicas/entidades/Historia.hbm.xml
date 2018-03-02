@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18-feb-2017 9:47:15 by Hibernate Tools 5.2.0.Beta1 -->
+<hibernate-mapping>
+    <class name="com.historiasclinicas.entidades.Historia" table="historia" catalog="histocons" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="paciente" type="int">
+            <column name="paciente" not-null="true" />
+        </property>
+        <property name="fecha" type="timestamp">
+            <column name="fecha" length="19" not-null="true" />
+        </property>
+        <property name="antecedentes" type="string">
+            <column name="antecedentes" />
+        </property>
+        <property name="evolucion" type="string">
+            <column name="evolucion" />
+        </property>
+        <property name="laboratorio" type="string">
+            <column name="laboratorio" />
+        </property>
+        <property name="otros" type="string">
+            <column name="otros" />
+        </property>
+        <property name="observaciones" type="string">
+            <column name="observaciones" />
+        </property>
+        <property name="diagprinc" type="string">
+            <column name="diagprinc" />
+        </property>
+        <property name="diagsec" type="string">
+            <column name="diagsec" />
+        </property>
+        <property name="especialista" type="string">
+            <column name="especialista" length="100" not-null="true" />
+        </property>
+        <property name="especialidad" type="string">
+            <column name="especialidad" length="45" />
+        </property>
+        <property name="orden" type="java.lang.Integer">
+            <column name="orden" />
+        </property>
+    </class>
+</hibernate-mapping>

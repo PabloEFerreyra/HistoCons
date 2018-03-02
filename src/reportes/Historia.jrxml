@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2016-12-02T22:32:55 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Historias" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7cb5da3b-2190-4e45-a095-3f64f2fb0578">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQL"/>
+	<parameter name="paciente" class="java.lang.Integer" isForPrompting="false" evaluationTime="Early"/>
+	<parameter name="fecha" class="java.lang.String" isForPrompting="false" evaluationTime="Early"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT histocons.paciente.dni,
+	histocons.paciente.nombre,
+	histocons.paciente.apellido,
+	histocons.historia.fecha,
+	histocons.historia.antecedentes,
+	histocons.historia.evolucion,
+	histocons.historia.laboratorio,
+	histocons.historia.otros,
+	histocons.historia.observaciones,
+	histocons.historia.diagprinc,
+	histocons.historia.diagsec,
+	histocons.historia.especialista,
+	histocons.historia.especialidad
+FROM histocons.paciente
+	INNER JOIN histocons.historia ON 
+	 histocons.historia.paciente = histocons.paciente.dni
+	 WHERE histocons.paciente.dni = $P{paciente}
+	 AND histocons.historia.fecha = $P{fecha}]]>
+	</queryString>
+	<field name="dni" class="java.lang.Integer"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="apellido" class="java.lang.String"/>
+	<field name="fecha" class="java.lang.String"/>
+	<field name="antecedentes" class="java.lang.String"/>
+	<field name="evolucion" class="java.lang.String"/>
+	<field name="laboratorio" class="java.lang.String"/>
+	<field name="otros" class="java.lang.String"/>
+	<field name="observaciones" class="java.lang.String"/>
+	<field name="diagprinc" class="java.lang.String"/>
+	<field name="diagsec" class="java.lang.String"/>
+	<field name="especialista" class="java.lang.String"/>
+	<field name="especialidad" class="java.lang.String"/>
+	<group name="dni">
+		<groupExpression><![CDATA[$F{dni}]]></groupExpression>
+	</group>
+	<group name="nombre">
+		<groupExpression><![CDATA[$F{nombre}]]></groupExpression>
+	</group>
+	<group name="apellido">
+		<groupExpression><![CDATA[$F{apellido}]]></groupExpression>
+	</group>
+	<group name="fecha">
+		<groupExpression><![CDATA[$F{fecha}]]></groupExpression>
+	</group>
+	<group name="antecedentes">
+		<groupExpression><![CDATA[$F{antecedentes}]]></groupExpression>
+	</group>
+	<group name="evolucion">
+		<groupExpression><![CDATA[$F{evolucion}]]></groupExpression>
+	</group>
+	<group name="laboratorio">
+		<groupExpression><![CDATA[$F{laboratorio}]]></groupExpression>
+	</group>
+	<group name="otros">
+		<groupExpression><![CDATA[$F{otros}]]></groupExpression>
+	</group>
+	<group name="observaciones">
+		<groupExpression><![CDATA[$F{observaciones}]]></groupExpression>
+	</group>
+	<group name="diagprinc">
+		<groupExpression><![CDATA[$F{diagprinc}]]></groupExpression>
+	</group>
+	<group name="diagsec">
+		<groupExpression><![CDATA[$F{diagsec}]]></groupExpression>
+	</group>
+	<group name="especialista">
+		<groupExpression><![CDATA[$F{especialista}]]></groupExpression>
+	</group>
+	<group name="especialidad">
+		<groupExpression><![CDATA[$F{especialidad}]]></groupExpression>
+	</group>
+	<title>
+		<band height="800" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<textField>
+				<reportElement x="400" y="70" width="144" height="20" uuid="c101f7f4-7e02-43c5-a764-4da14e0ed4da"/>
+				<textFieldExpression><![CDATA[$F{dni}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="50" width="144" height="20" uuid="1ad0fca0-fcb5-4c91-86c0-45c1fb5f91ea"/>
+				<textFieldExpression><![CDATA[$F{nombre}+" "+$F{apellido}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="0" width="554" height="30" uuid="e6378635-981e-4798-a041-272581e50539"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="24" isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Historia clinica"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="120" width="70" height="20" uuid="e3876018-7986-4e55-b880-abf6f1fdd0a3"/>
+				<textElement markup="styled">
+					<font fontName="Times New Roman" size="12" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Antecedentes:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="120" width="474" height="100" uuid="36a8fd81-1810-42f1-bb15-5e2cc7efd0aa"/>
+				<box padding="5">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{antecedentes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="220" width="70" height="20" uuid="51612159-cedc-4918-b02e-c2ac5677600b"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Laboratorio:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="220" width="474" height="100" uuid="f0b81dd0-1215-497b-a48b-d25f18630e19"/>
+				<box padding="5">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{laboratorio}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="30" width="140" height="80" uuid="125d5d98-342e-4ab5-9f7d-b8621c4f7331"/>
+				<imageExpression><![CDATA["src/imagenes/logotipo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="320" width="70" height="20" uuid="140f39aa-f435-4ed3-9212-0a85d7a1f4d9"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Evolucion:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="320" width="474" height="100" uuid="03305daf-4b76-4144-9c67-345807e60a31"/>
+				<box padding="5">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{evolucion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="420" width="70" height="20" uuid="501d4f83-fb96-4bb8-89cc-e3bcfaabb660"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Obs:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="420" width="474" height="100" uuid="f8a7a7b1-7dcd-4746-b21e-b10e003776af"/>
+				<box padding="5">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{observaciones}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="520" width="70" height="20" uuid="8eb3f4a0-52ba-43af-898c-3765c5c26347"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Otros:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="520" width="474" height="100" uuid="0fba4fc4-5f93-4c91-8fa5-e4b2bb6b3c55"/>
+				<box padding="5">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{otros}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="620" width="70" height="20" uuid="9764b9d9-4029-4910-914e-89c41156f048"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Diagnosticos:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="620" width="474" height="60" uuid="9dd82a55-f056-4f2d-8704-0449d8c77296"/>
+				<box padding="5">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA["Principal: "+$F{diagprinc}+"\n\n"
++"Secundario: "+$F{diagsec}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="710" width="165" height="90" uuid="12756b47-0a01-40ac-bd77-cc7bffba9303"/>
+				<textFieldExpression><![CDATA["\n\n\n\n\n"
++"_________________________\n"
++$F{especialista}+"\n"
++$F{especialidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="90" width="104" height="20" uuid="8b39366f-47cb-4de5-a48a-9e83681e6622"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="400" y="90" width="40" height="20" uuid="aebfa734-ab7b-4784-9615-50932dc71ca7"/>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="400" y="30" width="145" height="18" uuid="be306337-df58-4f9e-b3ff-2b3d29372dfb"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Paciente:]]></text>
+			</staticText>
+		</band>
+	</title>
+</jasperReport>

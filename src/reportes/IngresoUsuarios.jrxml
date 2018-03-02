@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2016-12-02T23:09:16 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="IngresoUsuarios" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="55b373eb-6588-41d4-8dab-ecaf165dd975">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQL"/>
+	<parameter name="medico" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[SELECT COUNT(*)
+FROM histocons.historia
+WHERE 
+	 histocons.historia.especialista =  $P{medico}]]>
+	</queryString>
+	<field name="COUNT(*)" class="java.lang.Long"/>
+	<background>
+		<band height="180" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="30" uuid="eeb1c310-6abd-449f-8178-718e586ddd1e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="24" isBold="true" isUnderline="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Reporte Ingresos por Medico]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="30" width="140" height="80" uuid="647a325b-2492-4547-9cd0-10be17fda548"/>
+				<imageExpression><![CDATA["src/imagenes/logotipo.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="2" y="123" width="553" height="57" uuid="7d948c1f-1465-4092-afcb-248335bfa047"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Al dia de la fecha "+DAY(TODAY())+"/"+MONTH(TODAY())+"/"+YEAR(TODAY())+" se han registrado la cantidad de: "+$F{COUNT(*)}+" ingresos para el medico: "+$P{medico}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="430" y="40" width="121" height="31" uuid="f113e054-fe8c-493c-af1f-3d63e022e17f"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[DAY(TODAY())+"/"+MONTH(TODAY())+"/"+YEAR(TODAY())]]></textFieldExpression>
+			</textField>
+		</band>
+	</background>
+</jasperReport>

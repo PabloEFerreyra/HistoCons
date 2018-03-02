@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18-feb-2017 9:47:15 by Hibernate Tools 5.2.0.Beta1 -->
+<hibernate-mapping>
+    <class name="com.historiasclinicas.entidades.Otrasvacunas" table="otrasvacunas" catalog="histocons" optimistic-lock="version">
+        <id name="idOtrasVacunas" type="java.lang.Integer">
+            <column name="idOtrasVacunas" />
+            <generator class="identity" />
+        </id>
+        <property name="paciente" type="int">
+            <column name="paciente" not-null="true" />
+        </property>
+        <property name="nombreVacuna" type="string">
+            <column name="nombreVacuna" length="100" />
+        </property>
+        <property name="fechaVacuna" type="string">
+            <column name="fechaVacuna" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

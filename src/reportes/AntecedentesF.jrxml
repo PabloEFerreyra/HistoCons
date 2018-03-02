@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2016-12-02T23:55:57 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AntecedentesF" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="acf885c6-2c30-4d48-bd5a-bacd9a71ddf2">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQL"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="48"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#3F3F7D">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#CFCFE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#0000FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#E6E6FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#F8F8FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#00008B">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFBFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="antec1" uuid="7faca012-3a30-4413-abee-f053867d5309">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQL"/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<parameter name="Paciente1" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[SELECT
+     planillapediatrica.`dbtFamiliares` AS planillapediatrica_dbtFamiliares,
+     planillapediatrica.`AsmaFamiliares` AS planillapediatrica_AsmaFamiliares,
+     planillapediatrica.`AlergiaFamiliares` AS planillapediatrica_AlergiaFamiliares,
+     planillapediatrica.`TabaqFamiliares` AS planillapediatrica_TabaqFamiliares,
+     planillapediatrica.`HTAFamiliares` AS planillapediatrica_HTAFamiliares,
+     planillapediatrica.`cardiopatFamiliares` AS planillapediatrica_cardiopatFamiliares,
+     planillapediatrica.`colagenopFamiliares` AS planillapediatrica_colagenopFamiliares
+FROM
+     `planillapediatrica` planillapediatrica
+WHERE
+planillapediatrica.`Paciente` = $P{Paciente1}]]>
+		</queryString>
+		<field name="planillapediatrica_dbtFamiliares" class="java.lang.Boolean"/>
+		<field name="planillapediatrica_AsmaFamiliares" class="java.lang.Boolean"/>
+		<field name="planillapediatrica_AlergiaFamiliares" class="java.lang.Boolean"/>
+		<field name="planillapediatrica_TabaqFamiliares" class="java.lang.Boolean"/>
+		<field name="planillapediatrica_HTAFamiliares" class="java.lang.Boolean"/>
+		<field name="planillapediatrica_cardiopatFamiliares" class="java.lang.Boolean"/>
+		<field name="planillapediatrica_colagenopFamiliares" class="java.lang.Boolean"/>
+	</subDataset>
+	<subDataset name="antec2" uuid="38dd2eea-0057-4eef-94be-386de3d3eaa4">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQL"/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<parameter name="Paciente2" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[SELECT
+     planillapediatrica.`EpilepsiaFamiliares` AS planillapediatrica_EpilepsiaFamiliares,
+     planillapediatrica.`ObesidadFamiliares` AS planillapediatrica_ObesidadFamiliares,
+     planillapediatrica.`MigranaFamiliares` AS planillapediatrica_MigranaFamiliares,
+     planillapediatrica.`CancerFamiliares` AS planillapediatrica_CancerFamiliares,
+     planillapediatrica.`MiopiaFamiliares` AS planillapediatrica_MiopiaFamiliares,
+     planillapediatrica.`NeuropsiqFamiliares` AS planillapediatrica_NeuropsiqFamiliares,
+     planillapediatrica.`HematOncFamiliares` AS planillapediatrica_HematOncFamiliares
+FROM
+     `planillapediatrica` planillapediatrica
+WHERE
+     planillapediatrica.`Paciente`= $P{Paciente2}]]>
+		</queryString>
+		<field name="planillapediatrica_EpilepsiaFamiliares" class="java.lang.Boolean"/>
+		<field name="planillapediatrica_ObesidadFamiliares" class="java.lang.Boolean"/>
+		<field name="planillapediatrica_MigranaFamiliares" class="java.lang.Boolean"/>
+		<field name="planillapediatrica_CancerFamiliares" class="java.lang.Boolean"/>
+		<field name="planillapediatrica_MiopiaFamiliares" class="java.lang.Boolean"/>
+		<field name="planillapediatrica_NeuropsiqFamiliares" class="java.lang.Boolean"/>
+		<field name="planillapediatrica_HematOncFamiliares" class="java.lang.Boolean"/>
+	</subDataset>
+	<parameter name="Paciente" class="java.lang.Integer" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT histocons.paciente.dni,
+	histocons.paciente.nombre,
+	histocons.paciente.apellido,
+	histocons.planillapediatrica.`OtrosFamiliares`
+FROM histocons.planillapediatrica
+	INNER JOIN histocons.paciente ON
+	 histocons.paciente.dni = histocons.planillapediatrica.`Paciente`
+	 WHERE 	 histocons.paciente.dni =  $P{Paciente}]]>
+	</queryString>
+	<field name="dni" class="java.lang.Integer"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="apellido" class="java.lang.String"/>
+	<field name="OtrosFamiliares" class="java.lang.String"/>
+	<background>
+		<band height="802" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="31" uuid="ae3cec1c-ad58-4b06-896a-7a9e977e7e55"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="24" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Antecedentes Familiares]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="40" width="175" height="21" uuid="6eca1320-1695-4f8e-b49f-26bf8a24e717"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}+" "+$F{apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="380" y="61" width="175" height="21" uuid="afaed378-861f-4afb-93b3-b33635b7504e"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dni}.toString()]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement key="table 1" style="table 1" x="1" y="150" width="555" height="50" uuid="0cbcd7e7-6ca5-45fd-99c4-21ed87524927"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="antec1" uuid="00e5b483-e066-4dfb-9e6e-26e5066c6111">
+						<datasetParameter name="Paciente1">
+							<datasetParameterExpression><![CDATA[$P{Paciente}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="79" uuid="576eb6f4-52ca-42db-be8a-dcf82e7e7834">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement positionType="Float" x="0" y="0" width="79" height="30" uuid="dfd1fe7a-f03d-4c43-8b45-6204fdc56750"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Diabetes]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="79" height="20" uuid="f78bc71c-86de-4007-ae51-2e89a751c728"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman"/>
+								</textElement>
+								<textFieldExpression><![CDATA[($F{planillapediatrica_dbtFamiliares} ? "SI" : "NO")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="79" uuid="0a86da42-52f9-4fe6-bc55-22945c10f6f7">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement positionType="Float" x="0" y="0" width="79" height="30" uuid="5512befc-d3b1-480f-b4f7-340186228b38"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Asma]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="79" height="20" uuid="fed52ec5-acdb-4ea7-b114-ef85973a0660"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman"/>
+								</textElement>
+								<textFieldExpression><![CDATA[($F{planillapediatrica_AsmaFamiliares} ? "SI" : "NO")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="5945dc64-b0df-480f-8f87-02939702c53c">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement positionType="Float" x="0" y="0" width="80" height="30" uuid="f600839e-26d4-45de-88e3-d16ced26e644"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Alergias]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="80" height="20" uuid="db7e4c94-a5a1-45c9-8cb0-34df96c24306"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" isStrikeThrough="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[($F{planillapediatrica_AlergiaFamiliares} ? "SI" : "NO")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="79" uuid="79d00ce5-979f-40cd-b77f-27e8493e40b1">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement positionType="Float" x="0" y="0" width="79" height="30" uuid="7dc9e0d1-8c73-4cde-ab4d-8854e8cc6177"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Tabaquismo]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="79" height="20" uuid="f17e8ae2-bb8c-4923-99a8-84407d2e0364"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman"/>
+								</textElement>
+								<textFieldExpression><![CDATA[($F{planillapediatrica_TabaqFamiliares} ? "SI" : "NO")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="6505a269-344b-4f4a-936d-004fbd7d3493">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement positionType="Float" x="0" y="0" width="80" height="30" uuid="30d35a4f-b45d-4c94-9268-51175c58d394"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[HTA]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="80" height="20" uuid="a80e5d9a-3341-4e17-a85b-7ef846b87727"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman"/>
+								</textElement>
+								<textFieldExpression><![CDATA[($F{planillapediatrica_HTAFamiliares} ? "SI" : "NO")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="79" uuid="55219f48-91ce-4912-ace6-9e2f768bd3ad">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement positionType="Float" x="0" y="0" width="79" height="30" uuid="9f8a9b8b-0c19-4cdc-b150-2bf5bb890edd"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Cardiopatias]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="79" height="20" uuid="7af4f71e-2bcb-46fd-a457-e77734355cb6"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman"/>
+								</textElement>
+								<textFieldExpression><![CDATA[($F{planillapediatrica_cardiopatFamiliares} ? "SI" : "NO")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="79" uuid="5f8b397d-72e1-4347-9439-b7536e92020a">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement positionType="Float" x="0" y="0" width="79" height="30" uuid="823dba46-9163-4106-ad3a-1a2e394175a4"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Colagenopatias]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="79" height="20" uuid="2c1c4fcd-4033-4e98-ab33-bd21be426858"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman"/>
+								</textElement>
+								<textFieldExpression><![CDATA[($F{planillapediatrica_colagenopFamiliares} ? "SI" : "NO")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table 2" style="table 2" x="1" y="200" width="555" height="50" uuid="7ee0e0e0-e83d-457c-ab84-007540cbbc28"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="antec2" uuid="7684efbc-2a71-4d2c-9a74-797618871480">
+						<datasetParameter name="Paciente2">
+							<datasetParameterExpression><![CDATA[$P{Paciente}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="79" uuid="9dd1c2a4-7126-4e54-926f-c60d1d326c40">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="79" height="30" uuid="71e7ba43-e9c3-462f-9875-0bf9cb32a522"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Epilepsia]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="79" height="20" uuid="7c81b5a6-35ff-4d6e-b69e-3b423c6c23f2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman"/>
+								</textElement>
+								<textFieldExpression><![CDATA[($F{planillapediatrica_EpilepsiaFamiliares} ? "SI" : "NO")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="79" uuid="76c3db33-8f48-4761-ad29-16bb0546feea">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="79" height="30" uuid="e2678364-63f5-4497-ac9a-b017d6d6f068"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Obesidad]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="79" height="20" uuid="17a6ef27-1fb8-41c0-b971-a5910a0c207f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman"/>
+								</textElement>
+								<textFieldExpression><![CDATA[($F{planillapediatrica_ObesidadFamiliares} ? "SI" : "NO")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="79" uuid="eb882a2b-7f89-41a4-b0f3-e72693a0e82c">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="79" height="30" uuid="4f96a21e-703e-4f39-8233-130dcf98cc2c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Migrana]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="79" height="20" uuid="93f40e55-ba1e-4c8c-b018-4d1c54aa7b8f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman"/>
+								</textElement>
+								<textFieldExpression><![CDATA[($F{planillapediatrica_MigranaFamiliares} ? "SI" : "NO")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="79" uuid="d4daf252-3f44-496c-a6f9-6ec0509fd57e">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="79" height="30" uuid="6a777c4d-7e65-401c-9074-b5bf3ab4ccc5"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Cancer]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="79" height="20" uuid="adb5827d-f4ab-49a5-ac02-2851ac2109a8"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman"/>
+								</textElement>
+								<textFieldExpression><![CDATA[($F{planillapediatrica_CancerFamiliares} ? "SI" : "NO")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="79" uuid="2c0604ed-dd4d-4e02-8e86-50ca2d90fb6b">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="79" height="30" uuid="59376911-5578-4322-afa1-95c5c8d89ad1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Miopia]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="79" height="20" uuid="d23a6888-d4cf-4fad-8506-114781c8b539"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman"/>
+								</textElement>
+								<textFieldExpression><![CDATA[($F{planillapediatrica_MiopiaFamiliares} ? "SI" : "NO")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="79" uuid="66a3e38e-7aed-40ed-b313-167deb2b6d76">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="79" height="30" uuid="d6b3f740-71fa-4812-aa7a-bb7e852cfbab"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Neuropsiquiatria]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="79" height="20" uuid="884f353b-9637-4780-9e04-a55ceec2404d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman"/>
+								</textElement>
+								<textFieldExpression><![CDATA[($F{planillapediatrica_NeuropsiqFamiliares} ? "SI" : "NO")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="81" uuid="4f6123ee-b801-41a7-a09c-455b7802d940">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="81" height="30" uuid="4e405972-3ef8-42cf-ba7b-5129b6e39556"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Hematooncologico]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="81" height="20" uuid="28f8b2b9-464d-4ad9-9c14-d0f6b64dc7f2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman"/>
+								</textElement>
+								<textFieldExpression><![CDATA[($F{planillapediatrica_HematOncFamiliares} ? "SI" : "NO")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement positionType="Float" x="1" y="271" width="198" height="21" uuid="5c01c991-c15a-4366-9ed0-524a5d9b5edf"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true" isItalic="true" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Otros Antecedentes Familiares:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="292" width="554" height="155" uuid="fabe9b43-2ead-476f-b9bf-16c2ea101a54"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{OtrosFamiliares}]]></textFieldExpression>
+			</textField>
+		</band>
+	</background>
+</jasperReport>

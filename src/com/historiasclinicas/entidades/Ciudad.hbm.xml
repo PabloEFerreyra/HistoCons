@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18-feb-2017 9:47:15 by Hibernate Tools 5.2.0.Beta1 -->
+<hibernate-mapping>
+    <class name="com.historiasclinicas.entidades.Ciudad" table="ciudad" catalog="histocons" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="ciudadnombre" type="string">
+            <column name="ciudadnombre" length="60" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18-feb-2017 9:47:15 by Hibernate Tools 5.2.0.Beta1 -->
+<hibernate-mapping>
+    <class name="com.historiasclinicas.entidades.Paciente" table="paciente" catalog="histocons" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="dni" type="Integer">
+            <column name="dni" not-null="true" unique="true" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="nombre" length="100" not-null="true" />
+        </property>
+        <property name="apellido" type="string">
+            <column name="apellido" length="100" />
+        </property>
+        <property name="sexo" type="int">
+            <column name="sexo" not-null="true" />
+        </property>
+        <property name="obraSocial" type="java.lang.Integer">
+            <column name="obraSocial" />
+        </property>
+        <property name="fechaNacimiento" type="date">
+            <column name="fechaNacimiento" length="10" />
+        </property>
+        <property name="planOs" type="string">
+            <column name="planOs" length="45" />
+        </property>
+        <property name="nroAfiliado" type="string">
+            <column name="nroAfiliado" length="30" />
+        </property>
+        <property name="provincia" type="java.lang.Integer">
+            <column name="provincia" />
+        </property>
+        <property name="ciudad" type="java.lang.Integer">
+            <column name="ciudad" />
+        </property>
+        <property name="domicilio" type="string">
+            <column name="domicilio" length="200" />
+        </property>
+        <property name="telefono" type="java.lang.Long">
+            <column name="telefono" />
+        </property>
+        <property name="telefonoCelular" type="java.lang.Long">
+            <column name="telefonoCelular" />
+        </property>
+        <property name="correo" type="string">
+            <column name="correo" length="150" />
+        </property>
+        <property name="gruposanguineo" type="string">
+            <column name="gruposanguineo" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

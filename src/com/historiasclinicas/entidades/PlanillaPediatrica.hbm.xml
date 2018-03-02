@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18-feb-2017 9:47:15 by Hibernate Tools 5.2.0.Beta1 -->
+<hibernate-mapping>
+    <class name="com.historiasclinicas.entidades.Planillapediatrica" table="planillapediatrica" catalog="histocons" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="gesta" type="java.lang.Integer">
+            <column name="Gesta" />
+        </property>
+        <property name="parto" type="java.lang.Integer">
+            <column name="Parto" />
+        </property>
+        <property name="cesarea" type="java.lang.Integer">
+            <column name="Cesarea" />
+        </property>
+        <property name="aborto" type="java.lang.Integer">
+            <column name="Aborto" />
+        </property>
+        <property name="peso" type="java.lang.Integer">
+            <column name="Peso" />
+        </property>
+        <property name="talal" type="java.lang.Integer">
+            <column name="Talal" />
+        </property>
+        <property name="perCef" type="java.lang.Integer">
+            <column name="PerCef" />
+        </property>
+        <property name="apgar1" type="java.lang.Integer">
+            <column name="Apgar1" />
+        </property>
+        <property name="apgar5" type="java.lang.Integer">
+            <column name="Apgar5" />
+        </property>
+        <property name="egest" type="string">
+            <column name="EGest" length="45" />
+        </property>
+        <property name="patolDelRn" type="string">
+            <column name="PatolDelRN" length="65535" />
+        </property>
+        <property name="erroresCong" type="java.lang.Boolean">
+            <column name="ErroresCong" />
+        </property>
+        <property name="paciente" type="int">
+            <column name="Paciente" not-null="true" />
+        </property>
+        <property name="asmaPer" type="java.lang.Boolean">
+            <column name="AsmaPer" />
+        </property>
+        <property name="alergiasPer" type="java.lang.Boolean">
+            <column name="AlergiasPer" />
+        </property>
+        <property name="neurPer" type="java.lang.Boolean">
+            <column name="NeurPer" />
+        </property>
+        <property name="neumPer" type="java.lang.Boolean">
+            <column name="NeumPer" />
+        </property>
+        <property name="paperasPer" type="java.lang.Boolean">
+            <column name="PaperasPer" />
+        </property>
+        <property name="psicolPer" type="java.lang.Boolean">
+            <column name="PsicolPer" />
+        </property>
+        <property name="accPer" type="java.lang.Boolean">
+            <column name="AccPer" />
+        </property>
+        <property name="hematoPer" type="java.lang.Boolean">
+            <column name="HematoPer" />
+        </property>
+        <property name="rubeolaPer" type="java.lang.Boolean">
+            <column name="RubeolaPer" />
+        </property>
+        <property name="otitisPer" type="java.lang.Boolean">
+            <column name="OtitisPer" />
+        </property>
+        <property name="sarampPer" type="java.lang.Boolean">
+            <column name="SarampPer" />
+        </property>
+        <property name="varicelaPer" type="java.lang.Boolean">
+            <column name="VaricelaPer" />
+        </property>
+        <property name="infecUrPer" type="java.lang.Boolean">
+            <column name="InfecUrPer" />
+        </property>
+        <property name="cirugiasPer" type="java.lang.Boolean">
+            <column name="CirugiasPer" />
+        </property>
+        <property name="dbtPer" type="java.lang.Boolean">
+            <column name="dbtPer" />
+        </property>
+        <property name="digestivos" type="java.lang.Boolean">
+            <column name="Digestivos" />
+        </property>
+        <property name="dbtFamiliares" type="java.lang.Boolean">
+            <column name="dbtFamiliares" />
+        </property>
+        <property name="asmaFamiliares" type="java.lang.Boolean">
+            <column name="AsmaFamiliares" />
+        </property>
+        <property name="alergiaFamiliares" type="java.lang.Boolean">
+            <column name="AlergiaFamiliares" />
+        </property>
+        <property name="tabaqFamiliares" type="java.lang.Boolean">
+            <column name="TabaqFamiliares" />
+        </property>
+        <property name="htafamiliares" type="java.lang.Boolean">
+            <column name="HTAFamiliares" />
+        </property>
+        <property name="cardiopatFamiliares" type="java.lang.Boolean">
+            <column name="cardiopatFamiliares" />
+        </property>
+        <property name="colagenopFamiliares" type="java.lang.Boolean">
+            <column name="colagenopFamiliares" />
+        </property>
+        <property name="epilepsiaFamiliares" type="java.lang.Boolean">
+            <column name="EpilepsiaFamiliares" />
+        </property>
+        <property name="obesidadFamiliares" type="java.lang.Boolean">
+            <column name="ObesidadFamiliares" />
+        </property>
+        <property name="migranaFamiliares" type="java.lang.Boolean">
+            <column name="MigranaFamiliares" />
+        </property>
+        <property name="cancerFamiliares" type="java.lang.Boolean">
+            <column name="CancerFamiliares" />
+        </property>
+        <property name="miopiaFamiliares" type="java.lang.Boolean">
+            <column name="MiopiaFamiliares" />
+        </property>
+        <property name="neuropsiqFamiliares" type="java.lang.Boolean">
+            <column name="NeuropsiqFamiliares" />
+        </property>
+        <property name="hematOncFamiliares" type="java.lang.Boolean">
+            <column name="HematOncFamiliares" />
+        </property>
+        <property name="otrosPersonales" type="string">
+            <column name="OtrosPersonales" length="65535" />
+        </property>
+        <property name="otrosFamiliares" type="string">
+            <column name="OtrosFamiliares" length="65535" />
+        </property>
+        <property name="medPerm" type="string">
+            <column name="medPerm" length="65535" />
+        </property>
+    </class>
+</hibernate-mapping>

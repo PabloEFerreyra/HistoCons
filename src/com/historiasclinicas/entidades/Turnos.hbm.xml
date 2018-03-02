@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18-feb-2017 9:47:15 by Hibernate Tools 5.2.0.Beta1 -->
+<hibernate-mapping>
+    <class name="com.historiasclinicas.entidades.Turnos" table="turnos" catalog="histocons" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="estados" class="com.historiasclinicas.entidades.Estados" fetch="select">
+            <column name="estado" not-null="true" />
+        </many-to-one>
+        <property name="fechaTurno" type="date">
+            <column name="fechaTurno" length="19" not-null="true" />
+        </property>
+        <property name="paciente" type="int">
+            <column name="paciente" not-null="true" />
+        </property>
+        <property name="especialista" type="string">
+            <column name="especialista" length="45" not-null="true" />
+        </property>
+        <property name="horaTurno" type="string">
+            <column name="horaTurno" length="45" not-null="true" />
+        </property>
+        <property name="pacienteApellido" type="string">
+            <column name="pacienteApellido" length="45" not-null="true" />
+        </property>
+        <property name="pacienteNombre" type="string">
+            <column name="pacienteNombre" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

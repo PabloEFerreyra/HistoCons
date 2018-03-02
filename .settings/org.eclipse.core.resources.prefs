@@ -1,2 +1,10 @@
 eclipse.preferences.version=1
-encoding//src/pantallas/PantaMostrarIngreso.java=UTF-8
+encoding//src/reportes/Antecedentes.jrxml=UTF-8
+encoding//src/reportes/AntecedentesF.jrxml=UTF-8
+encoding//src/reportes/Crecimiento.jrxml=UTF-8
+encoding//src/reportes/ErroresCongenitos.jrxml=UTF-8
+encoding//src/reportes/Historia.jrxml=UTF-8
+encoding//src/reportes/Historias.jrxml=UTF-8
+encoding//src/reportes/IngresoUsuarios.jrxml=UTF-8
+encoding//src/reportes/ObrasSociales.jrxml=UTF-8
+encoding//src/reportes/Vacunas.jrxml=UTF-8

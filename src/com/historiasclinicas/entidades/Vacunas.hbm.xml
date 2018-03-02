@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18-feb-2017 9:47:15 by Hibernate Tools 5.2.0.Beta1 -->
+<hibernate-mapping>
+    <class name="com.historiasclinicas.entidades.Vacunas" table="vacunas" catalog="histocons" optimistic-lock="version">
+        <id name="idVacunas" type="java.lang.Integer">
+            <column name="idVacunas" />
+            <generator class="identity" />
+        </id>
+        <property name="paciente" type="int">
+            <column name="paciente" not-null="true" />
+        </property>
+        <property name="bcg" type="string">
+            <column name="BCG" length="30" />
+        </property>
+        <property name="sabin" type="string">
+            <column name="Sabin" length="30" />
+        </property>
+        <property name="hepB" type="string">
+            <column name="HepB" length="30" />
+        </property>
+        <property name="dpt" type="string">
+            <column name="DPT" length="30" />
+        </property>
+        <property name="hib" type="string">
+            <column name="HIB" length="30" />
+        </property>
+        <property name="prs" type="string">
+            <column name="PRS" length="30" />
+        </property>
+        <property name="dta" type="string">
+            <column name="DTa" length="30" />
+        </property>
+        <property name="hepA" type="string">
+            <column name="HepA" length="30" />
+        </property>
+        <property name="otras" type="java.lang.Boolean">
+            <column name="Otras" />
+        </property>
+    </class>
+</hibernate-mapping>

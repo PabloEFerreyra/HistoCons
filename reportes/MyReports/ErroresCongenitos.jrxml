@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ErroresCongenitos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4f427af6-6c4d-4b74-909a-43a525ec239b">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQL"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="261"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#0000FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFBFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#0000FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFBFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#0000FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFBFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="ErroresCongenitos" uuid="cc792a9a-0282-4fa3-a471-f90156a27c9a">
+		<parameter name="Paciente1" class="java.lang.Integer"/>
+		<queryString>
+			<![CDATA[SELECT
+     errorescongenitos.`hipotCong` AS errorescongenitos_hipotCong,
+     errorescongenitos.`hipotNorm` AS errorescongenitos_hipotNorm,
+     errorescongenitos.`fenilcetonuria` AS errorescongenitos_fenilcetonuria,
+     errorescongenitos.`fenilcetNorm` AS errorescongenitos_fenilcetNorm,
+     errorescongenitos.`fqp` AS errorescongenitos_fqp,
+     errorescongenitos.`fqpNorm` AS errorescongenitos_fqpNorm
+FROM
+     `errorescongenitos` errorescongenitos
+WHERE
+     errorescongenitos.paciente = $P{Paciente1}]]>
+		</queryString>
+		<field name="errorescongenitos_hipotCong" class="java.lang.Boolean"/>
+		<field name="errorescongenitos_hipotNorm" class="java.lang.Integer"/>
+		<field name="errorescongenitos_fenilcetonuria" class="java.lang.Boolean"/>
+		<field name="errorescongenitos_fenilcetNorm" class="java.lang.Integer"/>
+		<field name="errorescongenitos_fqp" class="java.lang.Boolean"/>
+		<field name="errorescongenitos_fqpNorm" class="java.lang.Integer"/>
+	</subDataset>
+	<subDataset name="ErroresCongenitos1" uuid="b1ec5a47-223d-4d1e-b6a1-57d775c325d1">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     errorescongenitos.`biotidinasa` AS errorescongenitos_biotidinasa,
+     errorescongenitos.`biotNorm` AS errorescongenitos_biotNorm,
+     errorescongenitos.`galactosemia` AS errorescongenitos_galactosemia,
+     errorescongenitos.`galacNom` AS errorescongenitos_galacNom,
+     errorescongenitos.`hidroxiprogres` AS errorescongenitos_hidroxiprogres,
+     errorescongenitos.`hidroNorm` AS errorescongenitos_hidroNorm
+FROM
+     `errorescongenitos` errorescongenitos]]>
+		</queryString>
+		<field name="errorescongenitos_biotidinasa" class="java.lang.Boolean"/>
+		<field name="errorescongenitos_biotNorm" class="java.lang.Integer"/>
+		<field name="errorescongenitos_galactosemia" class="java.lang.Boolean"/>
+		<field name="errorescongenitos_galacNom" class="java.lang.Integer"/>
+		<field name="errorescongenitos_hidroxiprogres" class="java.lang.Boolean"/>
+		<field name="errorescongenitos_hidroNorm" class="java.lang.Integer"/>
+	</subDataset>
+	<parameter name="Paciente" class="java.lang.Integer" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[SELECT histocons.errorescongenitos.`otrosErrores`,
+	histocons.errorescongenitos.paciente,
+	histocons.paciente.nombre,
+	histocons.paciente.apellido
+FROM histocons.paciente
+	INNER JOIN histocons.errorescongenitos ON
+	 histocons.errorescongenitos.paciente = histocons.paciente.dni
+WHERE histocons.paciente.dni = $P{Paciente}]]>
+	</queryString>
+	<field name="otrosErrores" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="paciente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellido" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="801" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="37" uuid="a91809c7-96c8-49a0-98c9-b1d95e7e81ed"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="24" isBold="true" isItalic="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Errores Congenitos]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="365" y="37" width="190" height="20" uuid="140edb2d-10e6-49e8-90ed-74ae5f4bc387"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}+" "+$F{apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="365" y="57" width="190" height="20" uuid="f27c9cf1-7aa4-4dcf-99c8-1e324c7c3f24"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{paciente}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement key="table 1" style="table 1" x="0" y="130" width="554" height="50" uuid="2c414589-8279-4bc5-b54f-08988a180f28"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="ErroresCongenitos" uuid="53b200b6-a149-4401-8df7-f5c54e2a204b">
+						<datasetParameter name="Paciente1">
+							<datasetParameterExpression><![CDATA[$P{Paciente}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="92" uuid="a9ad52f5-ee54-4760-8ee9-04304e52fd82">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="92" height="30" uuid="a62309f8-0b77-4347-b1ed-b8c80ec0b73b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Hipotiroidismo Congenito]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="92" height="20" uuid="4774f29c-4b8e-49a8-b7cf-6470a2eea859"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[($F{errorescongenitos_hipotCong} ? "SI" : "NO")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="92" uuid="f8319e7e-54f9-45fc-bcd2-d3a93c850efa">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="92" height="30" uuid="0b907dce-303a-4cda-953c-c0735ad77730"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Normal/Anormal]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="92" height="20" uuid="c05d7f86-45cd-4265-9be8-3f9edf5d2587"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{errorescongenitos_hipotNorm}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="93" uuid="e9c7c8e0-5d3f-4910-9837-418d56034a08">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="93" height="30" uuid="e3893a1b-c594-4f47-8675-808381c54878"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Fenilcetonuria]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="93" height="20" uuid="487fcb59-5ae1-49ad-ba83-330a503581a3"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[($F{errorescongenitos_fenilcetonuria} ? "SI" : "NO")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="92" uuid="b0c944bf-d390-4940-bbcd-c9a6422d49f7">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="92" height="30" uuid="d20452aa-9824-4904-b011-89df0d157ff3"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Normal/Anormal]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="92" height="20" uuid="d60eac8a-753c-4a8c-8e33-d4d601355260"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{errorescongenitos_fenilcetNorm}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="93" uuid="bf219f88-f77e-44e0-92fa-69b6a5e8bf29">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="93" height="30" uuid="3dba98ef-0a7c-4c2c-90ea-055579f5b436"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[FQP]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="93" height="20" uuid="6eb48b62-c409-49bb-81dd-288c17efa143"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[($F{errorescongenitos_fqp} ? "SI" : "NO")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="92" uuid="ce326707-9591-4a2d-b715-d675268fe71b">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="92" height="30" uuid="dd89da09-01ee-4836-9648-90b8eb4e045a"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Normal/Anormal]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="92" height="20" uuid="928dc8b1-85f2-4675-98a9-334b8bb888d9"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{errorescongenitos_fqpNorm}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table 2" style="table 2" x="-1" y="183" width="555" height="50" uuid="b5a61ce8-eeca-4373-83ce-2c57e91d57fc"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="ErroresCongenitos1" uuid="aa91fb26-c49e-4356-8f71-688b7b5eeb9c">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="92" uuid="9bbb3652-7fc4-418f-94d0-8f5d3d7a3ba3">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="92" height="30" uuid="c150f9b8-c8fb-4c65-86ad-81eea67b4492"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Biotidinasa]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="92" height="20" uuid="100fd208-c3a3-479b-842c-d1d14d8151d8"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[($F{errorescongenitos_biotidinasa} ? "SI" : "NO")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="93" uuid="aed0be3d-286f-47af-96f8-0da15d1228a1">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="93" height="30" uuid="ed3e0f5a-0529-4efd-b8d5-8f7e0e9b64a3"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Normal/Anormal]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="93" height="20" uuid="4197e5dc-4a16-4cd0-b5de-765d521ff173"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{errorescongenitos_biotNorm}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="93" uuid="7778b20e-7cfe-4f31-a823-90a2a46859c6">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="93" height="30" uuid="d2c06c93-bacb-415e-a355-60f88310f380"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Galactosemia]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="93" height="20" uuid="1d90503e-fc79-4992-a634-d9d84c3bc85e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[($F{errorescongenitos_galactosemia} ? "SI" : "NO")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="93" uuid="7acc9b7c-873f-45d0-a3ee-bb33d40466a4">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="93" height="30" uuid="b8eba587-553e-4e48-9ddf-dd4ea97e387d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Normal/Anormal]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="93" height="20" uuid="5b3f7595-5739-4924-a548-b9d71be84a98"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{errorescongenitos_galacNom}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="92" uuid="4a0e292b-6659-4a6d-8e16-005449cf1b1d">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="92" height="30" uuid="9b7478b1-7d59-4789-9c7a-873422784fb7"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Hidroxiproges]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="92" height="20" uuid="dd4e183d-82d4-4b4b-bca7-0831dc792f65"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[($F{errorescongenitos_hidroxiprogres} ? "SI" : "NO")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="92" uuid="6dcffbbc-15ea-4d2d-994b-e27b51e7576d">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="92" height="30" uuid="43896c09-97cb-48bd-9840-e94570c74621"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Normal/Anormal]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="92" height="20" uuid="675827cb-325b-4ef5-9189-b9a8c506a0a9"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{errorescongenitos_hidroNorm}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement x="0" y="258" width="85" height="26" uuid="35a27071-995d-4198-b19c-6731d011ea27"/>
+				<textElement>
+					<font fontName="Times New Roman" size="18" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Otros EC:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="-1" y="285" width="555" height="153" uuid="80ebe487-02a8-4535-9459-e718670cee01"/>
+				<textFieldExpression><![CDATA[$F{otrosErrores}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="30" width="140" height="80" uuid="465ec60e-ae57-4ff8-a7b0-f6acc4238675"/>
+				<imageExpression><![CDATA["src/imagenes/logotipo.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+</jasperReport>

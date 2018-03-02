@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2016-12-03T01:54:01 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Vacunas1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b7661e9d-d837-45a6-ad13-ea4b8cd1618f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQL"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value="aGlzdG9jb25zLnBhY2llbnRlIEFTICwxMjksMTUsN2M3NTkyYTItNjkxMy00NGMyLTg5ZDYtOTBj&#xA;MDA1NTQ5YjRlOw=="/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="326"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Vacunas" uuid="f9bc8872-0dc1-4e3c-9391-2015da3ee81d">
+		<parameter name="Paciente1" class="java.lang.Integer" isForPrompting="false"/>
+		<queryString>
+			<![CDATA[SELECT
+     vacunas.`BCG` AS vacunas_BCG,
+     vacunas.`Sabin` AS vacunas_Sabin,
+     vacunas.`HepB` AS vacunas_HepB,
+     vacunas.`DPT` AS vacunas_DPT,
+     vacunas.`HIB` AS vacunas_HIB,
+     vacunas.`PRS` AS vacunas_PRS,
+     vacunas.`DTa` AS vacunas_DTa,
+     vacunas.`HepA` AS vacunas_HepA
+FROM
+     `vacunas` vacunas
+WHERE
+    vacunas.`paciente` = $P{Paciente1}]]>
+		</queryString>
+		<field name="vacunas_BCG" class="java.lang.String"/>
+		<field name="vacunas_Sabin" class="java.lang.String"/>
+		<field name="vacunas_HepB" class="java.lang.String"/>
+		<field name="vacunas_DPT" class="java.lang.String"/>
+		<field name="vacunas_HIB" class="java.lang.String"/>
+		<field name="vacunas_PRS" class="java.lang.String"/>
+		<field name="vacunas_DTa" class="java.lang.String"/>
+		<field name="vacunas_HepA" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="Vacunas1" uuid="bd7c9df4-e0e3-479c-a5b2-1dcfcc9406a1">
+		<parameter name="Paciente2" class="java.lang.Integer" isForPrompting="false"/>
+		<queryString>
+			<![CDATA[SELECT
+     otrasvacunas.`nombreVacuna` AS otrasvacunas_nombreVacuna,
+     otrasvacunas.`fechaVacuna` AS otrasvacunas_fechaVacuna
+FROM
+     `otrasvacunas` otrasvacunas
+WHERE
+     otrasvacunas.`paciente` = $P{Paciente2}]]>
+		</queryString>
+		<field name="otrasvacunas_nombreVacuna" class="java.lang.String"/>
+		<field name="otrasvacunas_fechaVacuna" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="Paciente" class="java.lang.Integer" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[SELECT histocons.paciente.dni,
+	histocons.paciente.nombre,
+	histocons.paciente.apellido
+FROM histocons.paciente
+WHERE histocons.paciente.dni = $P{Paciente}]]>
+	</queryString>
+	<field name="dni" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellido" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="551" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="30" uuid="cd4705e0-537e-47fd-ac06-7ed2ae674936"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="24" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Reporte Vacunas]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="340" y="30" width="215" height="20" uuid="776b6241-388c-4161-aa8a-8f257aa324f4"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}+" "+$F{apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="343" y="52" width="212" height="18" uuid="f951470e-49b5-44e0-9f10-fa6bfc64c5f2"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dni}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="30" width="140" height="80" uuid="e6c4efec-f4e3-4560-9e43-08cbddc27a94"/>
+				<imageExpression><![CDATA["src/imagenes/logotipo.png"]]></imageExpression>
+			</image>
+			<componentElement>
+				<reportElement key="table 1" style="table 1" x="0" y="120" width="555" height="146" uuid="3765e580-e022-4e1b-a202-0d5b5f4a6110"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Vacunas" uuid="c76f8d60-fe98-4a5a-9d1a-2c3a0b56aeb1">
+						<datasetParameter name="Paciente1">
+							<datasetParameterExpression><![CDATA[$P{Paciente}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="70" uuid="850b84bb-b89b-414b-9268-829ef850e7a8">
+						<jr:columnHeader style="table 1_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="30" uuid="ef199fb1-aaad-42b9-9fea-11a3c3a2f199"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[BCG]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="70" height="20" uuid="5596ab76-8e17-481b-ba68-e15038b1860c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{vacunas_BCG}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="69" uuid="ea462bf3-aa8e-4f25-9190-554078c7dca3">
+						<jr:columnHeader style="table 1_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="69" height="30" uuid="5a9ac8c1-734d-4c28-b319-ee66c90f7f12"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Sabin]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="69" height="20" uuid="6d0727d5-7795-474d-849b-0333cd06f73f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{vacunas_Sabin}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="69" uuid="de157099-1fc3-413f-826d-dd7c324df4ba">
+						<jr:columnHeader style="table 1_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="69" height="30" uuid="765cd11a-8e00-419f-9132-b497b1bfdc33"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Hep B]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="69" height="20" uuid="e9fa9f6d-e120-45d1-a500-cd156c9e303b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{vacunas_HepB}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="69" uuid="a40fe0a9-4256-4123-8b36-0bd53f82a387">
+						<jr:columnHeader style="table 1_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="69" height="30" uuid="3115c32d-841b-4eca-b131-42abdfbee7bc"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[DPT]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="69" height="20" uuid="30d35672-ad16-405c-a4c5-b04ad43a60ae"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{vacunas_DPT}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="57f70ad8-b2db-4705-ab4f-54fc5e4bd2dc">
+						<jr:columnHeader style="table 1_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="30" uuid="4882fb5a-1e84-49f3-bf90-0729bff72838"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[HIB]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="70" height="20" uuid="a1272f84-b909-4ed1-8bd0-c1889094ada4"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{vacunas_HIB}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="69" uuid="7193d257-878f-4c62-8e33-9f0472f25e87">
+						<jr:columnHeader style="table 1_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="69" height="30" uuid="f2cfcd33-9996-45b1-bd25-12f07b803da4"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[PRS]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="69" height="20" uuid="57161e06-34ee-4303-bc95-db3ab090478d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{vacunas_PRS}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="69" uuid="0a26e236-1db3-4e9c-b63e-50da14614372">
+						<jr:columnHeader style="table 1_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="69" height="30" uuid="e2fd7952-5bd6-48a8-8007-56b5d4e64316"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[DTa]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="69" height="20" uuid="df0c7677-36a3-4dd8-ba77-6cbb6f1c5275"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{vacunas_DTa}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="123833a7-811d-4198-997c-cc919ab2c4b7">
+						<jr:columnHeader style="table 1_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="30" uuid="83a8b4d7-d335-44d8-9bca-325c5fa02565"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Hep A]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="70" height="20" uuid="a80af9a2-3fc6-4c8f-8aa4-66e6f6d76df4"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{vacunas_HepA}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement x="0" y="300" width="555" height="35" uuid="d425dece-9fc4-4fc6-ab94-5a1bb562f4b7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="20" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Otras Vacunas:]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement key="table 2" style="table 2" x="0" y="338" width="555" height="130" uuid="2ebd408e-ed60-43d3-9356-daf84266b5e8"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Vacunas1" uuid="a0ebaf39-3636-4f08-addf-7e63a2708552">
+						<datasetParameter name="Paciente2">
+							<datasetParameterExpression><![CDATA[$P{Paciente}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="277" uuid="0d215773-eab3-4be1-add3-1a4c59f7f91a">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="277" height="30" uuid="70fba196-bc81-4261-b035-26692c995c76"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[nombre Vacuna]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="277" height="20" uuid="d12a163a-03e0-487d-a8f9-01ed04bb1f43"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{otrasvacunas_nombreVacuna}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="278" uuid="f3eab6ef-139d-4a6b-984c-afce35006e56">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="278" height="30" uuid="1f59fdd3-e0e9-4ffb-9c95-fc56ec84a4d4"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[fecha Vacuna]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="278" height="20" uuid="349a31b3-3012-4828-ad7f-f7cf8f870268"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{otrasvacunas_fechaVacuna}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</background>
+</jasperReport>
